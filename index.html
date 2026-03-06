@@ -1,0 +1,390 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rare Heirloom Tomatoes for Preorder</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #7B0000;
+      color: #ffffff;
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.6;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    header {
+      background: linear-gradient(160deg, #3d0000 0%, #6b0000 60%, #7B0000 100%);
+      border-bottom: 4px solid #2E7D32;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      color: #81C784;
+      text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.55);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      color: #f0f0f0;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ── Nav ─────────────────────────────────────────── */
+    nav {
+      background-color: #3d0000;
+      padding: 0.6rem 2rem;
+      text-align: center;
+      border-bottom: 2px solid #2E7D32;
+    }
+
+    nav a {
+      color: #81C784;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-size: 0.95rem;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* ── Main layout ─────────────────────────────────── */
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 3rem;
+    }
+
+    .section-heading {
+      color: #81C784;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ── Tomato grid ─────────────────────────────────── */
+    .tomato-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    /* ── Tomato card ─────────────────────────────────── */
+    .tomato-card {
+      background-color: rgba(0, 0, 0, 0.32);
+      border: 2px solid #2E7D32;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .tomato-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .tomato-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background-color: #4a0000;
+    }
+
+    .tomato-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .tomato-body h2 {
+      color: #81C784;
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid rgba(46, 125, 50, 0.45);
+    }
+
+    .tomato-type {
+      display: inline-block;
+      background-color: rgba(46, 125, 50, 0.25);
+      border: 1px solid rgba(46, 125, 50, 0.6);
+      color: #a5d6a7;
+      font-size: 0.75rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .tomato-desc {
+      color: #f0f0f0;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .tomato-details {
+      margin-bottom: 1.1rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    .detail-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.28rem;
+    }
+
+    .detail-label {
+      color: #a5d6a7;
+      font-weight: bold;
+      min-width: 72px;
+      flex-shrink: 0;
+    }
+
+    .detail-value {
+      color: #e8e8e8;
+    }
+
+    .provider-link {
+      display: inline-block;
+      color: #81C784;
+      border: 1px solid #2E7D32;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-family: Arial, sans-serif;
+      margin-top: auto;
+      align-self: flex-start;
+      transition: background-color 0.18s, color 0.18s;
+    }
+
+    .provider-link:hover {
+      background-color: rgba(46, 125, 50, 0.28);
+      color: #ffffff;
+    }
+
+    /* ── Preorder section ────────────────────────────── */
+    .preorder-section {
+      margin: 3.5rem 0 1rem;
+      background-color: rgba(0, 0, 0, 0.32);
+      border: 2px solid #2E7D32;
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .preorder-section h2 {
+      color: #81C784;
+      font-size: 1.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .preorder-section > p {
+      color: #e0e0e0;
+      max-width: 620px;
+      margin: 0 auto 1.8rem;
+      font-size: 1rem;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .form-container iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    /* Shown when no Google Form is embedded yet */
+    .form-placeholder {
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 2px dashed rgba(129, 199, 132, 0.4);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      color: #bdbdbd;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .form-placeholder strong {
+      color: #81C784;
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-placeholder code {
+      background: rgba(0,0,0,0.3);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      color: #a5d6a7;
+    }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      background-color: #3d0000;
+      border-top: 4px solid #2E7D32;
+      padding: 1.4rem 2rem;
+      text-align: center;
+      color: #bdbdbd;
+      font-size: 0.88rem;
+      font-family: Arial, sans-serif;
+      margin-top: 2rem;
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 580px) {
+      .tomato-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 2rem 1.2rem;
+      }
+      main {
+        padding: 1.5rem 1rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Rare Heirloom Tomatoes for Preorder</h1>
+  <p>Reserve your seedlings of the world's most extraordinary heirloom tomatoes, lovingly grown and ready for your garden.</p>
+</header>
+
+<nav>
+  <a href="#varieties">Varieties</a>
+  <a href="#preorder">Preorder</a>
+</nav>
+
+<main>
+
+  <!-- ── Variety listing ─────────────────────────── -->
+  <h2 class="section-heading" id="varieties">Available Varieties</h2>
+
+  <div class="tomato-grid">
+    {% for tomato in site.data.tomatoes %}
+    <div class="tomato-card">
+      <img class="tomato-img"
+           src="{{ tomato.image_url }}"
+           alt="{{ tomato.image_alt }}"
+           loading="lazy">
+      <div class="tomato-body">
+        <h2>{{ tomato.name }}</h2>
+        <span class="tomato-type">{{ tomato.type }}</span>
+        <p class="tomato-desc">{{ tomato.description }}</p>
+        <div class="tomato-details">
+          <div class="detail-row">
+            <span class="detail-label">Plant:</span>
+            <span class="detail-value">{{ tomato.plant_size }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Fruit:</span>
+            <span class="detail-value">{{ tomato.fruit_size }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Color:</span>
+            <span class="detail-value">{{ tomato.color }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Flavor:</span>
+            <span class="detail-value">{{ tomato.flavor }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Uses:</span>
+            <span class="detail-value">{{ tomato.uses }}</span>
+          </div>
+        </div>
+        <a href="{{ tomato.provider_url }}"
+           class="provider-link"
+           target="_blank"
+           rel="noopener noreferrer">
+          View at {{ tomato.provider }} &rarr;
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ── Preorder form ───────────────────────────── -->
+  <section class="preorder-section" id="preorder">
+    <h2>Place Your Preorder</h2>
+    <p>
+      Interested in reserving your tomato seedlings? Fill out the form below
+      with your name, email, and which varieties you'd like to preorder.
+      We'll be in touch with pickup details and pricing!
+    </p>
+
+    <div class="form-container">
+      <!--
+        HOW TO EMBED YOUR GOOGLE FORM
+        ══════════════════════════════
+        1. Go to forms.google.com and create a new form.
+        2. Add fields:
+             • Short answer  — "Your Name"
+             • Short answer  — "Email Address"
+             • Paragraph     — "Tomato Varieties & Quantities"
+        3. Click "Send" → embed icon (<>) → copy the <iframe> code.
+        4. Delete the <div class="form-placeholder">…</div> block below
+           and paste your <iframe> in its place.
+
+        Example:
+        <iframe
+          src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+          width="100%" height="820" frameborder="0"
+          marginheight="0" marginwidth="0">
+          Loading form…
+        </iframe>
+      -->
+      <div class="form-placeholder">
+        <strong>Preorder form coming soon!</strong>
+        Replace this placeholder with your Google Form embed code.
+        See the HTML comment above for step-by-step instructions.
+        The <code>&lt;iframe&gt;</code> goes right here.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; {{ 'now' | date: "%Y" }} Rare Heirloom Tomatoes &mdash; Seedlings grown with care for your garden.</p>
+</footer>
+
+</body>
+</html>
