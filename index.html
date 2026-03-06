@@ -407,12 +407,24 @@
 
   /* Push the current order into the Google Form via pre-fill URL */
   function refreshIframe() {
-    var iframe = document.getElementById('google-form');
-    if (!iframe) return;
+    var old = document.getElementById('google-form');
+    if (!old) return;
     var msg = buildMessage();
-    iframe.src = msg
+    var newSrc = msg
       ? FORM_BASE + '&' + ENTRY + '=' + encodeURIComponent(msg)
       : FORM_BASE;
+    // Replace the element rather than changing .src — removing an iframe from
+    // the DOM does not fire beforeunload, whereas src reassignment does (which
+    // is what triggers Chrome's "Leave site?" dialog on Google Forms).
+    var fresh = document.createElement('iframe');
+    fresh.id     = 'google-form';
+    fresh.src    = newSrc;
+    fresh.width  = '100%';
+    fresh.height = '820';
+    fresh.setAttribute('frameborder',    '0');
+    fresh.setAttribute('marginheight',   '0');
+    fresh.setAttribute('marginwidth',    '0');
+    old.parentNode.replaceChild(fresh, old);
   }
 
   /* Close every popup except the one passed in (pass null to close all) */
