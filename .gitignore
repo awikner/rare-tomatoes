@@ -3,6 +3,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .claude
+.DS_store
 Gemfile.lock
 CLAUDE.md
 _data/IMG_0352.PNG.jpg
+_data/Tomato Guide.pdf

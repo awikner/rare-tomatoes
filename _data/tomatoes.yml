@@ -3,6 +3,7 @@
 # Black Cherry: Baker Creek source — no link or image per site policy.
 
 - name: "Blush"
+  panel: "panels/panel-01.jpg"
   type: "Cherry"
   plant_size: "Indeterminate; vigorous plants 6–8 ft tall"
   fruit_size: "1–2 oz; small, elongated oval"
@@ -16,6 +17,7 @@
   image_alt: "Blush tomato — golden yellow with rose-pink blush"
 
 - name: "Sun Gold"
+  panel: "panels/panel-02.jpg"
   type: "Cherry"
   plant_size: "Indeterminate; very vigorous plants 6–8 ft tall"
   fruit_size: "About 1 oz; small, round"
@@ -29,6 +31,7 @@
   image_alt: "Sun Gold tomato — bright tangerine orange cherry"
 
 - name: "Black Krim"
+  panel: "panels/panel-03.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; large plants 5–7 ft tall"
   fruit_size: "10–16 oz; large, slightly flattened globe"
@@ -42,6 +45,7 @@
   image_alt: "Black Krim tomato — deep mahogany red-brown beefsteak"
 
 - name: "Black Cherry"
+  panel: "panels/panel-04.jpg"
   type: "Cherry"
   plant_size: "Indeterminate; vigorous plants 6–8 ft tall"
   fruit_size: "About 1 oz; small, round"
@@ -54,6 +58,7 @@
   image_alt: "Black Cherry tomato — deep mahogany red-purple cherry"
 
 - name: "San Marzano II"
+  panel: "panels/panel-05.jpg"
   type: "Paste"
   plant_size: "Indeterminate; tall plants 5–7 ft"
   fruit_size: "4–6 oz; medium, elongated plum shape"
@@ -67,6 +72,7 @@
   image_alt: "San Marzano II tomato — elongated bright red paste tomato"
 
 - name: "Red Pearl Grape"
+  panel: "panels/panel-06.jpg"
   type: "Grape"
   plant_size: "Indeterminate; compact to moderate plants 4–6 ft"
   fruit_size: "1–1.5 oz; small, elongated oval grape shape"
@@ -80,6 +86,7 @@
   image_alt: "Red Pearl Grape tomato — bright red grape-shaped"
 
 - name: "Blue Beech Paste"
+  panel: "panels/panel-07.jpg"
   type: "Paste"
   plant_size: "Indeterminate; plants 5–7 ft tall"
   fruit_size: "3–5 oz; medium, elongated beech shape"
@@ -93,6 +100,7 @@
   image_alt: "Blue Beech Paste tomato — red with blue-purple shoulders"
 
 - name: "Dwarf Purple Heart"
+  panel: "panels/panel-08.jpg"
   type: "Beefsteak / Heart"
   plant_size: "Dwarf; compact plants 2–4 ft tall; excellent for containers and small spaces"
   fruit_size: "6–16 oz; medium to large, heart-shaped"
@@ -106,6 +114,7 @@
   image_alt: "Dwarf Purple Heart tomato — heart-shaped deep purple-black"
 
 - name: "Cipolla's Pride Paste"
+  panel: "panels/panel-09.jpg"
   type: "Paste"
   plant_size: "Indeterminate; plants 5–7 ft tall"
   fruit_size: "10–16 oz; medium to large, dense paste shape"
@@ -119,6 +128,7 @@
   image_alt: "Cipolla's Pride Paste tomato — deep red Italian paste"
 
 - name: "Dwarf Hannah's Prize"
+  panel: "panels/panel-10.jpg"
   type: "Beefsteak"
   plant_size: "Dwarf; compact plants 2–4 ft tall; excellent for containers"
   fruit_size: "6–12 oz; medium to large, oblate"
@@ -132,6 +142,7 @@
   image_alt: "Dwarf Hannah's Prize tomato — red oblate with light striping"
 
 - name: "Speckled Roman Paste"
+  panel: "panels/panel-11.jpg"
   type: "Paste"
   plant_size: "Indeterminate; plants 5–6 ft tall"
   fruit_size: "4–5 oz; medium, elongated paste shape"
@@ -145,6 +156,7 @@
   image_alt: "Speckled Roman Paste tomato — scarlet with golden striations"
 
 - name: "Dwarf Stony Brook Heart"
+  panel: "panels/panel-12.jpg"
   type: "Heart / Beefsteak"
   plant_size: "Dwarf; compact potato-leaf plants 36–48 in tall; very productive"
   fruit_size: "6–16 oz; medium to large, distinctly heart-shaped with golden stripes"
@@ -158,6 +170,7 @@
   image_alt: "Dwarf Stony Brook Heart tomato — scarlet heart-shaped with golden stripes"
 
 - name: "Dwarf Mandurang Moon"
+  panel: "panels/panel-13.jpg"
   type: "Cherry"
   plant_size: "Dwarf; compact plants about 48 in tall x 24 in wide; container-friendly"
   fruit_size: "1–2 oz; small, oval, ivory-colored"
@@ -171,6 +184,7 @@
   image_alt: "Dwarf Mandurang Moon tomato — creamy ivory oval cherry"
 
 - name: "Wiesnicht's Ukrainian"
+  panel: "panels/panel-14.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; compact potato-leaf plants 5–7 ft tall"
   fruit_size: "8–18 oz; large, often bi-lobed, sparse seed bearer"
@@ -184,6 +198,7 @@
   image_alt: "Weisnicht's Ukrainian tomato — large pink beefsteak"
 
 - name: "Pantano Romanesco"
+  panel: "panels/panel-15.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; large vigorous plants 5–7 ft tall"
   fruit_size: "About 10 oz; large, deeply scalloped and flattened"
@@ -197,6 +212,7 @@
   image_alt: "Pantano Romanesco tomato — large deeply ribbed red Italian heirloom"
 
 - name: "Cherokee Purple"
+  panel: "panels/panel-16.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; relatively short vines 5–7 ft tall"
   fruit_size: "10–13 oz; large, globe to slightly oblate"
@@ -210,6 +226,7 @@
   image_alt: "Cherokee Purple tomato — dusky brownish-purple large heirloom"
 
 - name: "Midnight Roma"
+  panel: "panels/panel-17.jpg"
   type: "Paste"
   plant_size: "Determinate; compact bushy plants 3–4 ft tall"
   fruit_size: "Medium, plum/roma shape"

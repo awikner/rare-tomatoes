@@ -14,55 +14,55 @@
     }
 
     body {
-      background-color: #7B0000;
-      color: #ffffff;
+      background-color: #ffffff;
+      color: #2a2a2a;
       font-family: Georgia, 'Times New Roman', serif;
       line-height: 1.6;
     }
 
     /* ── Header ─────────────────────────────────────── */
     header {
-      background: linear-gradient(160deg, #3d0000 0%, #6b0000 60%, #7B0000 100%);
-      border-bottom: 4px solid #2E7D32;
-      padding: 3rem 2rem 2.5rem;
+      background-color: #ffffff;
+      border-bottom: 3px solid #4A7824;
+      padding: 2.5rem 2rem 2rem;
       text-align: center;
     }
 
     header h1 {
       font-size: clamp(1.6rem, 4vw, 2.8rem);
-      color: #81C784;
-      text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.55);
+      color: #4A7824;
       letter-spacing: 0.02em;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
 
     header p {
       font-size: 1.05rem;
-      color: #f0f0f0;
-      max-width: 620px;
+      color: #555;
+      max-width: 600px;
       margin: 0 auto;
     }
 
     /* ── Nav ─────────────────────────────────────────── */
     nav {
-      background-color: #3d0000;
+      background-color: #f7faf4;
       padding: 0.6rem 2rem;
       text-align: center;
-      border-bottom: 2px solid #2E7D32;
+      border-bottom: 1px solid #c8ddb8;
     }
 
     nav a {
-      color: #81C784;
+      color: #4A7824;
       text-decoration: none;
       margin: 0 1.2rem;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-family: Arial, sans-serif;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: #ffffff;
+      color: #2d4d14;
       text-decoration: underline;
     }
 
@@ -74,143 +74,89 @@
     }
 
     .section-heading {
-      color: #81C784;
-      font-size: 1.8rem;
+      color: #4A7824;
+      font-size: 1.7rem;
       text-align: center;
       margin-bottom: 2rem;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     }
 
     /* ── Tomato grid ─────────────────────────────────── */
     .tomato-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.75rem;
     }
 
     /* ── Tomato card ─────────────────────────────────── */
     .tomato-card {
-      background-color: rgba(0, 0, 0, 0.32);
-      border: 2px solid #2E7D32;
-      border-radius: 12px;
+      border: 1px solid #d4e8c2;
+      border-radius: 10px;
       overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
     .tomato-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
     }
 
-    .tomato-img {
+    .panel-img {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
       display: block;
-      background-color: #4a0000;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
     }
 
-    .tomato-body {
-      padding: 1.4rem 1.5rem 1.6rem;
+    /* ── Card footer (provider link) ─────────────────── */
+    .card-footer {
+      padding: 0.75rem 1rem;
+      background-color: #f7faf4;
+      border-top: 1px solid #d4e8c2;
       display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .tomato-body h2 {
-      color: #81C784;
-      font-size: 1.35rem;
-      margin-bottom: 0.35rem;
-      padding-bottom: 0.45rem;
-      border-bottom: 1px solid rgba(46, 125, 50, 0.45);
-    }
-
-    .tomato-type {
-      display: inline-block;
-      background-color: rgba(46, 125, 50, 0.25);
-      border: 1px solid rgba(46, 125, 50, 0.6);
-      color: #a5d6a7;
-      font-size: 0.75rem;
-      padding: 0.18rem 0.55rem;
-      border-radius: 4px;
-      margin-bottom: 0.85rem;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
-    .tomato-desc {
-      color: #f0f0f0;
-      font-size: 0.92rem;
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-
-    .tomato-details {
-      margin-bottom: 1.1rem;
-      font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-    }
-
-    .detail-row {
-      display: flex;
-      gap: 0.4rem;
-      margin-bottom: 0.28rem;
-    }
-
-    .detail-label {
-      color: #a5d6a7;
-      font-weight: bold;
-      min-width: 72px;
-      flex-shrink: 0;
-    }
-
-    .detail-value {
-      color: #e8e8e8;
+      align-items: center;
     }
 
     .provider-link {
       display: inline-block;
-      color: #81C784;
-      border: 1px solid #2E7D32;
-      padding: 0.45rem 1rem;
-      border-radius: 6px;
+      color: #4A7824;
+      border: 1px solid #4A7824;
+      padding: 0.38rem 0.9rem;
+      border-radius: 5px;
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-family: Arial, sans-serif;
-      margin-top: auto;
-      align-self: flex-start;
       transition: background-color 0.18s, color 0.18s;
     }
 
     .provider-link:hover {
-      background-color: rgba(46, 125, 50, 0.28);
+      background-color: #4A7824;
       color: #ffffff;
     }
 
     /* ── Preorder section ────────────────────────────── */
     .preorder-section {
-      margin: 3.5rem 0 1rem;
-      background-color: rgba(0, 0, 0, 0.32);
-      border: 2px solid #2E7D32;
-      border-radius: 12px;
+      margin: 3rem 0 1rem;
+      background-color: #f7faf4;
+      border: 1px solid #c8ddb8;
+      border-radius: 10px;
       padding: 2.5rem 2rem;
       text-align: center;
     }
 
     .preorder-section h2 {
-      color: #81C784;
-      font-size: 1.9rem;
+      color: #4A7824;
+      font-size: 1.8rem;
       margin-bottom: 0.6rem;
     }
 
     .preorder-section > p {
-      color: #e0e0e0;
-      max-width: 620px;
-      margin: 0 auto 1.8rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 1.75rem;
       font-size: 1rem;
     }
 
@@ -227,40 +173,13 @@
       background: #fff;
     }
 
-    /* Shown when no Google Form is embedded yet */
-    .form-placeholder {
-      background-color: rgba(255, 255, 255, 0.06);
-      border: 2px dashed rgba(129, 199, 132, 0.4);
-      border-radius: 8px;
-      padding: 2.5rem 2rem;
-      color: #bdbdbd;
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .form-placeholder strong {
-      color: #81C784;
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .form-placeholder code {
-      background: rgba(0,0,0,0.3);
-      padding: 0.15rem 0.4rem;
-      border-radius: 3px;
-      font-size: 0.85rem;
-      color: #a5d6a7;
-    }
-
     /* ── Footer ─────────────────────────────────────── */
     footer {
-      background-color: #3d0000;
-      border-top: 4px solid #2E7D32;
+      background-color: #f7faf4;
+      border-top: 3px solid #4A7824;
       padding: 1.4rem 2rem;
       text-align: center;
-      color: #bdbdbd;
+      color: #666;
       font-size: 0.88rem;
       font-family: Arial, sans-serif;
       margin-top: 2rem;
@@ -272,7 +191,7 @@
         grid-template-columns: 1fr;
       }
       header {
-        padding: 2rem 1.2rem;
+        padding: 1.75rem 1.2rem 1.5rem;
       }
       main {
         padding: 1.5rem 1rem 2rem;
@@ -300,45 +219,20 @@
   <div class="tomato-grid">
     {% for tomato in site.data.tomatoes %}
     <div class="tomato-card">
-      <img class="tomato-img"
-           src="{{ tomato.image_url }}"
-           alt="{{ tomato.image_alt }}"
+      <img class="panel-img"
+           src="{{ tomato.panel }}"
+           alt="{{ tomato.name }}"
            loading="lazy">
-      <div class="tomato-body">
-        <h2>{{ tomato.name }}</h2>
-        <span class="tomato-type">{{ tomato.type }}</span>
-        <p class="tomato-desc">{{ tomato.description }}</p>
-        <div class="tomato-details">
-          <div class="detail-row">
-            <span class="detail-label">Plant:</span>
-            <span class="detail-value">{{ tomato.plant_size }}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Fruit:</span>
-            <span class="detail-value">{{ tomato.fruit_size }}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Color:</span>
-            <span class="detail-value">{{ tomato.color }}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Flavor:</span>
-            <span class="detail-value">{{ tomato.flavor }}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Uses:</span>
-            <span class="detail-value">{{ tomato.uses }}</span>
-          </div>
-        </div>
-        {% if tomato.provider_url %}
+      {% if tomato.provider_url %}
+      <div class="card-footer">
         <a href="{{ tomato.provider_url }}"
            class="provider-link"
            target="_blank"
            rel="noopener noreferrer">
           View at {{ tomato.provider }} &rarr;
         </a>
-        {% endif %}
       </div>
+      {% endif %}
     </div>
     {% endfor %}
   </div>
@@ -353,35 +247,12 @@
     </p>
 
     <div class="form-container">
-      <!--
-        HOW TO EMBED YOUR GOOGLE FORM
-        ══════════════════════════════
-        1. Go to forms.google.com and create a new form.
-        2. Add fields:
-             • Short answer  — "Your Name"
-             • Short answer  — "Email Address"
-             • Paragraph     — "Tomato Varieties & Quantities"
-        3. Click "Send" → embed icon (<>) → copy the <iframe> code.
-        4. Delete the <div class="form-placeholder">…</div> block below
-           and paste your <iframe> in its place.
-
-        Example:
-      -->
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSd8vqemGLHMxrkCjYE1kDCxFWhQ_eQNiDZnIKVLbuLT94ecFg/viewform?embedded=true"
         width="100%" height="820" frameborder="0"
         marginheight="0" marginwidth="0">
-        Loading form…
+        Loading form&hellip;
       </iframe>
-      
-      <!--
-      <div class="form-placeholder">
-        <strong>Preorder form coming soon!</strong>
-        Replace this placeholder with your Google Form embed code.
-        See the HTML comment above for step-by-step instructions.
-        The <code>&lt;iframe&gt;</code> goes right here.
-      </div>
-      -->
     </div>
   </section>
 
