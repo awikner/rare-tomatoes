@@ -330,12 +330,14 @@
             <span class="detail-value">{{ tomato.uses }}</span>
           </div>
         </div>
+        {% if tomato.provider_url %}
         <a href="{{ tomato.provider_url }}"
            class="provider-link"
            target="_blank"
            rel="noopener noreferrer">
           View at {{ tomato.provider }} &rarr;
         </a>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
