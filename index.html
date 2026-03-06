@@ -91,7 +91,8 @@
     .tomato-card {
       border: 1px solid #d4e8c2;
       border-radius: 10px;
-      overflow: hidden;
+      /* overflow: visible so the preorder popup is not clipped */
+      overflow: visible;
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -104,6 +105,13 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
     }
 
+    /* Wrapper clips top corners of the image */
+    .panel-img-wrapper {
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
     .panel-img {
       width: 100%;
       display: block;
@@ -111,11 +119,12 @@
       object-fit: cover;
     }
 
-    /* ── Card footer (provider link) ─────────────────── */
+    /* ── Card footer ─────────────────────────────────── */
     .card-footer {
       padding: 0.75rem 1rem;
       background-color: #f7faf4;
       border-top: 1px solid #d4e8c2;
+      border-radius: 0 0 10px 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -130,12 +139,100 @@
       text-decoration: none;
       font-size: 0.85rem;
       font-family: Arial, sans-serif;
+      cursor: pointer;
+      background: transparent;
       transition: background-color 0.18s, color 0.18s;
     }
 
     .provider-link:hover {
       background-color: #4A7824;
       color: #ffffff;
+    }
+
+    /* ── Preorder popup ──────────────────────────────── */
+    .preorder-action {
+      position: relative;
+    }
+
+    .preorder-popup {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      right: 0;
+      z-index: 200;
+      background: #ffffff;
+      border: 1px solid #4A7824;
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      min-width: 250px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+      font-family: Arial, sans-serif;
+    }
+
+    /* Down-pointing caret */
+    .preorder-popup::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      right: 18px;
+      width: 14px;
+      height: 14px;
+      background: #ffffff;
+      border-right: 1px solid #4A7824;
+      border-bottom: 1px solid #4A7824;
+      transform: rotate(45deg);
+    }
+
+    .popup-input-panel label {
+      display: block;
+      color: #4A7824;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-bottom: 0.7rem;
+      line-height: 1.4;
+    }
+
+    .qty-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .qty-input {
+      width: 72px;
+      padding: 0.32rem 0.5rem;
+      border: 1px solid #4A7824;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #2a2a2a;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .qty-input:focus {
+      outline: 2px solid #4A7824;
+      outline-offset: 1px;
+    }
+
+    .qty-confirm {
+      padding: 0.32rem 0.9rem;
+      background-color: #4A7824;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.15s;
+    }
+
+    .qty-confirm:hover {
+      background-color: #3a5e1a;
+    }
+
+    .popup-thanks {
+      color: #2a5510;
+      font-size: 0.84rem;
+      line-height: 1.55;
     }
 
     /* ── Preorder section ────────────────────────────── */
@@ -220,10 +317,12 @@
   <div class="tomato-grid">
     {% for tomato in site.data.tomatoes %}
     <div class="tomato-card">
-      <img class="panel-img"
-           src="{{ tomato.panel }}"
-           alt="{{ tomato.name }}"
-           loading="lazy">
+      <div class="panel-img-wrapper">
+        <img class="panel-img"
+             src="{{ tomato.panel }}"
+             alt="{{ tomato.name }}"
+             loading="lazy">
+      </div>
       <div class="card-footer">
         {% if tomato.provider_url %}
         <a href="{{ tomato.provider_url }}"
@@ -235,7 +334,23 @@
         {% else %}
         <span></span>
         {% endif %}
-        <a href="#preorder" class="provider-link">Preorder &darr;</a>
+
+        <div class="preorder-action" data-name="{{ tomato.name | escape }}">
+          <!-- Popup anchored above the Preorder button -->
+          <div class="preorder-popup" hidden>
+            <div class="popup-input-panel">
+              <label>How many would you like to preorder?</label>
+              <div class="qty-row">
+                <input type="number" class="qty-input" min="0" step="1" placeholder="0">
+                <button type="button" class="qty-confirm">OK</button>
+              </div>
+            </div>
+            <div class="popup-thanks" hidden>
+              Thank you! Remember to submit your preorder at the bottom of the page when you are finished.
+            </div>
+          </div>
+          <button type="button" class="provider-link preorder-btn">Preorder &darr;</button>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -251,7 +366,7 @@
     </p>
 
     <div class="form-container">
-      <iframe
+      <iframe id="google-form"
         src="https://docs.google.com/forms/d/e/1FAIpQLSd8vqemGLHMxrkCjYE1kDCxFWhQ_eQNiDZnIKVLbuLT94ecFg/viewform?embedded=true"
         width="100%" height="820" frameborder="0"
         marginheight="0" marginwidth="0">
@@ -265,6 +380,135 @@
 <footer>
   <p>&copy; {{ 'now' | date: "%Y" }} Rare Heirloom Tomatoes &mdash; Seedlings grown with care for your garden.</p>
 </footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSd8vqemGLHMxrkCjYE1kDCxFWhQ_eQNiDZnIKVLbuLT94ecFg/viewform?embedded=true';
+  var ENTRY    = 'entry.449169550';
+
+  // Accumulated order: { "Blush": 3, "Sun Gold": 5, ... }
+  var orders = {};
+
+  /* Build the formatted order message from current state */
+  function buildMessage() {
+    var lines = Object.keys(orders)
+      .filter(function (k) { return orders[k] > 0; })
+      .map(function (k) {
+        var q = orders[k];
+        return '- ' + k + ': ' + q + ' seedling' + (q !== 1 ? 's' : '');
+      });
+    if (!lines.length) return '';
+    return [
+      'Hello! I am interested in preordering the following rare tomato seedlings:',
+    ].concat(lines).concat(['Thank you!']).join('\n');
+  }
+
+  /* Push the current order into the Google Form via pre-fill URL */
+  function refreshIframe() {
+    var iframe = document.getElementById('google-form');
+    if (!iframe) return;
+    var msg = buildMessage();
+    iframe.src = msg
+      ? FORM_BASE + '&' + ENTRY + '=' + encodeURIComponent(msg)
+      : FORM_BASE;
+  }
+
+  /* Close every popup except the one passed in (pass null to close all) */
+  function closeAllPopups(except) {
+    document.querySelectorAll('.preorder-popup').forEach(function (p) {
+      if (p !== except) p.hidden = true;
+    });
+  }
+
+  /* Show the thank-you message; dismiss after 10 s or when card leaves viewport */
+  function showThanks(action) {
+    var popup  = action.querySelector('.preorder-popup');
+    var inputP = action.querySelector('.popup-input-panel');
+    var thanks = action.querySelector('.popup-thanks');
+
+    inputP.hidden = true;
+    thanks.hidden = false;
+
+    var timer = setTimeout(function () { popup.hidden = true; }, 10000);
+
+    var obs = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) {
+        popup.hidden = true;
+        clearTimeout(timer);
+        obs.disconnect();
+      }
+    }, { threshold: 0 });
+    obs.observe(action.closest('.tomato-card'));
+  }
+
+  /* Read qty input and commit the order entry */
+  function confirmQty(action) {
+    var input = action.querySelector('.qty-input');
+    var val   = parseInt(input.value, 10);
+    if (isNaN(val) || val < 0) return;
+
+    var name = action.dataset.name;
+    if (val > 0) {
+      orders[name] = val;
+    } else {
+      delete orders[name];
+    }
+
+    refreshIframe();
+    showThanks(action);
+  }
+
+  /* ── Event listeners ─────────────────────────── */
+
+  // Preorder button: toggle popup open/closed
+  document.querySelectorAll('.preorder-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var action = this.closest('.preorder-action');
+      var popup  = action.querySelector('.preorder-popup');
+      var inputP = action.querySelector('.popup-input-panel');
+      var thanks = action.querySelector('.popup-thanks');
+      var opening = popup.hidden;
+
+      closeAllPopups(popup);
+
+      if (opening) {
+        popup.hidden  = false;
+        inputP.hidden = false;
+        thanks.hidden = true;
+        var qtyInput = action.querySelector('.qty-input');
+        var name = action.dataset.name;
+        qtyInput.value = orders[name] || '';
+        qtyInput.focus();
+      } else {
+        popup.hidden = true;
+      }
+    });
+  });
+
+  // OK button
+  document.querySelectorAll('.qty-confirm').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      confirmQty(this.closest('.preorder-action'));
+    });
+  });
+
+  // Enter key in number input
+  document.querySelectorAll('.qty-input').forEach(function (input) {
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') confirmQty(this.closest('.preorder-action'));
+    });
+  });
+
+  // Click outside → close all popups
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.preorder-action')) closeAllPopups(null);
+  });
+
+}());
+</script>
 
 </body>
 </html>
