@@ -118,6 +118,7 @@
       border-top: 1px solid #d4e8c2;
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
 
     .provider-link {
@@ -223,16 +224,19 @@
            src="{{ tomato.panel }}"
            alt="{{ tomato.name }}"
            loading="lazy">
-      {% if tomato.provider_url %}
       <div class="card-footer">
+        {% if tomato.provider_url %}
         <a href="{{ tomato.provider_url }}"
            class="provider-link"
            target="_blank"
            rel="noopener noreferrer">
           View at {{ tomato.provider }} &rarr;
         </a>
+        {% else %}
+        <span></span>
+        {% endif %}
+        <a href="#preorder" class="provider-link">Preorder &darr;</a>
       </div>
-      {% endif %}
     </div>
     {% endfor %}
   </div>
