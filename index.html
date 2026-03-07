@@ -500,6 +500,23 @@
     ].concat(lines).concat(['Thank you!']).join('\n');
   }
 
+  /* Attach a load listener that fires a GA4 event on form submission.
+     The iframe fires 'load' once when the form page loads, then again
+     when the confirmation page loads after the user submits — that
+     second load is the signal we track. */
+  function attachSubmitTracking(iframe) {
+    var firstLoad = true;
+    iframe.addEventListener('load', function () {
+      if (firstLoad) { firstLoad = false; return; }
+      if (typeof gtag === 'function') {
+        gtag('event', 'preorder_submitted', {
+          event_category: 'preorder',
+          event_label:    'Google Form submitted'
+        });
+      }
+    });
+  }
+
   /* Push the current order into the Google Form via pre-fill URL */
   function refreshIframe() {
     var old = document.getElementById('google-form');
@@ -520,8 +537,12 @@
     fresh.setAttribute('marginheight',   '0');
     fresh.setAttribute('marginwidth',    '0');
     fresh.setAttribute('credentialless', '');
+    attachSubmitTracking(fresh);
     old.parentNode.replaceChild(fresh, old);
   }
+
+  // Also track submissions on the initial static iframe
+  attachSubmitTracking(document.getElementById('google-form'));
 
   /* Close every popup except the one passed in (pass null to close all) */
   function closeAllPopups(except) {
