@@ -127,7 +127,7 @@
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0153D10-2.jpg?v-cache=1719591810"
   image_alt: "Dwarf Purple Heart tomato — heart-shaped deep purple-black"
   in_stock: true
-  categories: [beefsteak, small]
+  categories: [beefsteak, small, paste]
 
 - name: "Cipolla's Pride Paste"
   panel: "pictures/panel-09.jpg"
@@ -191,7 +191,7 @@
   image_url: "https://victoryseeds.com/pics/2025-04-01/dave/53e2fc.webp"
   image_alt: "Dwarf Stony Brook Heart tomato — scarlet heart-shaped with golden stripes"
   in_stock: true
-  categories: [beefsteak, small]
+  categories: [beefsteak, small, paste]
 
 - name: "Dwarf Mandurang Moon"
   panel: "pictures/panel-13.jpg"
