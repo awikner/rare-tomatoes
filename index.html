@@ -501,19 +501,30 @@
   }
 
   /* Attach a load listener that fires a GA4 event on form submission.
-     The iframe fires 'load' once when the form page loads, then again
-     when the confirmation page loads after the user submits — that
-     second load is the signal we track. */
+     Google Forms fires multiple 'load' events internally when loading
+     (redirects, credentialless setup, etc.), so we use a 15-second
+     minimum threshold: any reload that happens at least 15 s after the
+     form first appeared is treated as a genuine submission. */
   function attachSubmitTracking(iframe) {
-    var firstLoad = true;
+    var formReadyAt = null;
     iframe.addEventListener('load', function () {
-      if (firstLoad) { firstLoad = false; return; }
-      if (typeof gtag === 'function') {
-        gtag('event', 'preorder_submitted', {
-          event_category: 'preorder',
-          event_label:    'Google Form submitted'
-        });
+      var now = Date.now();
+      if (formReadyAt === null) {
+        // First load — record when the form became ready
+        formReadyAt = now;
+        return;
       }
+      if (now - formReadyAt >= 15000) {
+        // Enough time has passed for a real submission
+        if (typeof gtag === 'function') {
+          gtag('event', 'preorder_submitted', {
+            event_category: 'preorder',
+            event_label:    'Google Form submitted'
+          });
+        }
+      }
+      // Update timestamp so repeated navigations reset the window
+      formReadyAt = now;
     });
   }
 
