@@ -159,18 +159,20 @@
       filter: grayscale(80%) opacity(0.65);
     }
 
-    /* Full-image overlay */
+    /* Full-diagonal ribbon, bottom-left → top-right */
     .tomato-card.sold-out .panel-img-wrapper::after {
       content: 'Sold Out';
       position: absolute;
-      inset: 0;
-      background-color: rgba(74, 120, 36, 0.62);
+      left: 50%;
+      top: 50%;
+      width: 160%;
+      padding: 5% 0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      background-color: #4A7824;
       color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
       font-family: Arial, sans-serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-size: clamp(1.2rem, 3.5vw, 2rem);
       font-weight: bold;
       letter-spacing: 0.12em;
       text-transform: uppercase;
