@@ -95,7 +95,7 @@
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4101.jpg"
   image_alt: "Red Pearl Grape tomato — bright red grape-shaped"
   in_stock: true
-  categories: [cherry, apartment]
+  categories: [cherry]
 
 - name: "Blue Beech Paste"
   panel: "pictures/panel-07.jpg"
@@ -127,7 +127,7 @@
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0153D10-2.jpg?v-cache=1719591810"
   image_alt: "Dwarf Purple Heart tomato — heart-shaped deep purple-black"
   in_stock: true
-  categories: [beefsteak, apartment]
+  categories: [beefsteak, small]
 
 - name: "Cipolla's Pride Paste"
   panel: "pictures/panel-09.jpg"
@@ -159,7 +159,7 @@
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0153D6D-2.jpg?v-cache=1719591810"
   image_alt: "Dwarf Hannah's Prize tomato — red oblate with light striping"
   in_stock: true
-  categories: [beefsteak, apartment]
+  categories: [beefsteak, small]
 
 - name: "Speckled Roman Paste"
   panel: "pictures/panel-11.jpg"
@@ -191,7 +191,7 @@
   image_url: "https://victoryseeds.com/pics/2025-04-01/dave/53e2fc.webp"
   image_alt: "Dwarf Stony Brook Heart tomato — scarlet heart-shaped with golden stripes"
   in_stock: true
-  categories: [beefsteak, apartment]
+  categories: [beefsteak, small]
 
 - name: "Dwarf Mandurang Moon"
   panel: "pictures/panel-13.jpg"
@@ -207,7 +207,7 @@
   image_url: "https://hudsonvalleyseed.com/cdn/shop/products/Mandurang-Moon-Tomato-vendor-unknown-1630681597_grande.jpg?v=1735579440"
   image_alt: "Dwarf Mandurang Moon tomato — creamy ivory oval cherry"
   in_stock: true
-  categories: [cherry, apartment]
+  categories: [cherry, small]
 
 - name: "Wiesnicht's Ukrainian"
   panel: "pictures/panel-14.jpg"
