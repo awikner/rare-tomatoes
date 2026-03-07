@@ -3,7 +3,7 @@
 # Black Cherry: Baker Creek source — no link or image per site policy.
 
 - name: "Blush"
-  panel: "panels/panel-01.jpg"
+  panel: "pictures/panel-01.jpg"
   type: "Cherry"
   plant_size: "Indeterminate; vigorous plants 6–8 ft tall"
   fruit_size: "1–2 oz; small, elongated oval"
@@ -16,9 +16,10 @@
   image_url: "https://www.johnnyseeds.com/dw/image/v2/BJGJ_PRD/on/demandware.static/-/Sites-jss-master/default/dwbd4fc392/images/products/vegetables/03517g_01_blush.jpg?sw=800&sh=800"
   image_alt: "Blush tomato — golden yellow with rose-pink blush"
   in_stock: true
+  categories: [cherry]
 
 - name: "Sun Gold"
-  panel: "panels/panel-02.jpg"
+  panel: "pictures/panel-02.jpg"
   type: "Cherry"
   plant_size: "Indeterminate; very vigorous plants 6–8 ft tall"
   fruit_size: "About 1 oz; small, round"
@@ -31,9 +32,10 @@
   image_url: "https://www.botanicalinterests.com/cdn/shop/files/0185i_Tomato-Cherry-Sun-Gold_9l54ro_61aed349-be3a-424e-87bb-d3bbd5042f09.jpg?v=1770281065"
   image_alt: "Sun Gold tomato — bright tangerine orange cherry"
   in_stock: true
+  categories: [cherry]
 
 - name: "Black Krim"
-  panel: "panels/panel-03.jpg"
+  panel: "pictures/panel-03.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; large plants 5–7 ft tall"
   fruit_size: "10–16 oz; large, slightly flattened globe"
@@ -46,9 +48,10 @@
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0063-2.jpg?v-cache=1719591810"
   image_alt: "Black Krim tomato — deep mahogany red-brown beefsteak"
   in_stock: true
+  categories: [beefsteak]
 
 - name: "Black Cherry"
-  panel: "panels/panel-04.jpg"
+  panel: "pictures/panel-04.jpg"
   type: "Cherry"
   plant_size: "Indeterminate; vigorous plants 6–8 ft tall"
   fruit_size: "About 1 oz; small, round"
@@ -60,9 +63,10 @@
   image_url: "https://placehold.co/400x300/4a0000/ffffff?text=Black+Cherry"
   image_alt: "Black Cherry tomato — deep mahogany red-purple cherry"
   in_stock: true
+  categories: [cherry]
 
 - name: "San Marzano II"
-  panel: "panels/panel-05.jpg"
+  panel: "pictures/panel-05.jpg"
   type: "Paste"
   plant_size: "Indeterminate; tall plants 5–7 ft"
   fruit_size: "4–6 oz; medium, elongated plum shape"
@@ -75,9 +79,10 @@
   image_url: "https://www.johnnyseeds.com/dw/image/v2/BJGJ_PRD/on/demandware.static/-/Sites-jss-master/default/dw41fb5a76/images/products/vegetables/03405g_01_san_marzano.jpg?sw=800&sh=800"
   image_alt: "San Marzano II tomato — elongated bright red paste tomato"
   in_stock: true
+  categories: [paste]
 
 - name: "Red Pearl Grape"
-  panel: "panels/panel-06.jpg"
+  panel: "pictures/panel-06.jpg"
   type: "Grape"
   plant_size: "Indeterminate; compact to moderate plants 4–6 ft"
   fruit_size: "1–1.5 oz; small, elongated oval grape shape"
@@ -90,9 +95,10 @@
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4101.jpg"
   image_alt: "Red Pearl Grape tomato — bright red grape-shaped"
   in_stock: true
+  categories: [cherry, apartment]
 
 - name: "Blue Beech Paste"
-  panel: "panels/panel-07.jpg"
+  panel: "pictures/panel-07.jpg"
   type: "Paste"
   plant_size: "Indeterminate; plants 5–7 ft tall"
   fruit_size: "3–5 oz; medium, elongated beech shape"
@@ -105,9 +111,10 @@
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4146.jpg"
   image_alt: "Blue Beech Paste tomato — red with blue-purple shoulders"
   in_stock: true
+  categories: [paste]
 
 - name: "Dwarf Purple Heart"
-  panel: "panels/panel-08.jpg"
+  panel: "pictures/panel-08.jpg"
   type: "Beefsteak / Heart"
   plant_size: "Dwarf; compact plants 2–4 ft tall; excellent for containers and small spaces"
   fruit_size: "6–16 oz; medium to large, heart-shaped"
@@ -120,9 +127,10 @@
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0153D10-2.jpg?v-cache=1719591810"
   image_alt: "Dwarf Purple Heart tomato — heart-shaped deep purple-black"
   in_stock: true
+  categories: [beefsteak, apartment]
 
 - name: "Cipolla's Pride Paste"
-  panel: "panels/panel-09.jpg"
+  panel: "pictures/panel-09.jpg"
   type: "Paste"
   plant_size: "Indeterminate; plants 5–7 ft tall"
   fruit_size: "10–16 oz; medium to large, dense paste shape"
@@ -135,9 +143,10 @@
   image_url: "https://www.johnnyseeds.com/dw/image/v2/BJGJ_PRD/on/demandware.static/-/Sites-jss-master/default/dw5ee0262a/images/products/vegetables/04180g_01_cipollaspride.jpg?sw=800&sh=800"
   image_alt: "Cipolla's Pride Paste tomato — deep red Italian paste"
   in_stock: true
+  categories: [paste]
 
 - name: "Dwarf Hannah's Prize"
-  panel: "panels/panel-10.jpg"
+  panel: "pictures/panel-10.jpg"
   type: "Beefsteak"
   plant_size: "Dwarf; compact plants 2–4 ft tall; excellent for containers"
   fruit_size: "6–12 oz; medium to large, oblate"
@@ -150,9 +159,10 @@
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0153D6D-2.jpg?v-cache=1719591810"
   image_alt: "Dwarf Hannah's Prize tomato — red oblate with light striping"
   in_stock: true
+  categories: [beefsteak, apartment]
 
 - name: "Speckled Roman Paste"
-  panel: "panels/panel-11.jpg"
+  panel: "pictures/panel-11.jpg"
   type: "Paste"
   plant_size: "Indeterminate; plants 5–6 ft tall"
   fruit_size: "4–5 oz; medium, elongated paste shape"
@@ -165,9 +175,10 @@
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4138.jpg"
   image_alt: "Speckled Roman Paste tomato — scarlet with golden striations"
   in_stock: true
+  categories: [paste]
 
 - name: "Dwarf Stony Brook Heart"
-  panel: "panels/panel-12.jpg"
+  panel: "pictures/panel-12.jpg"
   type: "Heart / Beefsteak"
   plant_size: "Dwarf; compact potato-leaf plants 36–48 in tall; very productive"
   fruit_size: "6–16 oz; medium to large, distinctly heart-shaped with golden stripes"
@@ -180,9 +191,10 @@
   image_url: "https://victoryseeds.com/pics/2025-04-01/dave/53e2fc.webp"
   image_alt: "Dwarf Stony Brook Heart tomato — scarlet heart-shaped with golden stripes"
   in_stock: true
+  categories: [beefsteak, apartment]
 
 - name: "Dwarf Mandurang Moon"
-  panel: "panels/panel-13.jpg"
+  panel: "pictures/panel-13.jpg"
   type: "Cherry"
   plant_size: "Dwarf; compact plants about 48 in tall x 24 in wide; container-friendly"
   fruit_size: "1–2 oz; small, oval, ivory-colored"
@@ -195,9 +207,10 @@
   image_url: "https://hudsonvalleyseed.com/cdn/shop/products/Mandurang-Moon-Tomato-vendor-unknown-1630681597_grande.jpg?v=1735579440"
   image_alt: "Dwarf Mandurang Moon tomato — creamy ivory oval cherry"
   in_stock: true
+  categories: [cherry, apartment]
 
 - name: "Wiesnicht's Ukrainian"
-  panel: "panels/panel-14.jpg"
+  panel: "pictures/panel-14.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; compact potato-leaf plants 5–7 ft tall"
   fruit_size: "8–18 oz; large, often bi-lobed, sparse seed bearer"
@@ -210,9 +223,10 @@
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4082.jpg"
   image_alt: "Weisnicht's Ukrainian tomato — large pink beefsteak"
   in_stock: true
+  categories: [beefsteak]
 
 - name: "Pantano Romanesco"
-  panel: "panels/panel-15.jpg"
+  panel: "pictures/panel-15.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; large vigorous plants 5–7 ft tall"
   fruit_size: "About 10 oz; large, deeply scalloped and flattened"
@@ -225,9 +239,10 @@
   image_url: "https://hudsonvalleyseed.com/cdn/shop/products/Pantano-Romanesco-Tomato-vendor-unknown-1630677547_grande.jpg?v=1735579814"
   image_alt: "Pantano Romanesco tomato — large deeply ribbed red Italian heirloom"
   in_stock: true
+  categories: [beefsteak]
 
 - name: "Cherokee Purple"
-  panel: "panels/panel-16.jpg"
+  panel: "pictures/panel-16.jpg"
   type: "Beefsteak"
   plant_size: "Indeterminate; relatively short vines 5–7 ft tall"
   fruit_size: "10–13 oz; large, globe to slightly oblate"
@@ -240,9 +255,10 @@
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4059.jpg"
   image_alt: "Cherokee Purple tomato — dusky brownish-purple large heirloom"
   in_stock: true
+  categories: [beefsteak]
 
 - name: "Mortgage Lifter"
-  panel: "panels/panel-18.jpg"
+  panel: "pictures/panel-18.jpg"
   type: "Slicer / Beefsteak"
   plant_size: "Indeterminate; vigorous plants 5–7 ft tall; very productive and disease-resistant, bears until frost"
   fruit_size: "1–3+ lbs; very large, slightly flattened"
@@ -255,9 +271,10 @@
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0324-2.jpg?v-cache=1719591810"
   image_alt: "Mortgage Lifter Radiator Charlie's tomato — very large pink-red beefsteak"
   in_stock: true
+  categories: [beefsteak]
 
 - name: "Midnight Roma"
-  panel: "panels/panel-17.jpg"
+  panel: "pictures/panel-17.jpg"
   type: "Paste"
   plant_size: "Determinate; compact bushy plants 3–4 ft tall"
   fruit_size: "Medium, plum/roma shape"
@@ -270,3 +287,4 @@
   image_url: "https://www.row7seeds.com/cdn/shop/files/tomatocrop_5aee653f-4931-4ec4-9e53-b465e1caa5ce.jpg?v=1694434529"
   image_alt: "Midnight Roma tomato — deep purple-black paste tomato"
   in_stock: true
+  categories: [paste]

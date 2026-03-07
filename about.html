@@ -1,0 +1,252 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <title>About — Rare Heirloom Tomatoes</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #2a2a2a;
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.6;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    header {
+      background-color: #ffffff;
+      border-bottom: 3px solid #4A7824;
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      color: #4A7824;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    header p {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── Nav ─────────────────────────────────────────── */
+    nav {
+      background-color: #f7faf4;
+      padding: 0.6rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #c8ddb8;
+    }
+
+    nav a {
+      color: #4A7824;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-size: 0.9rem;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #2d4d14;
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      color: #2d4d14;
+      border-bottom: 2px solid #4A7824;
+      padding-bottom: 2px;
+    }
+
+    /* ── Main layout ─────────────────────────────────── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    .section-heading {
+      color: #4A7824;
+      font-size: 1.7rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── About section ───────────────────────────────── */
+    .about-section {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+    }
+
+    /* Circular photo */
+    .about-photo-wrap {
+      flex-shrink: 0;
+      width: 260px;
+    }
+
+    .about-photo {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      border: 4px solid #4A7824;
+      display: block;
+    }
+
+    /* Bio text */
+    .about-text p {
+      font-size: 1.08rem;
+      color: #2a2a2a;
+      line-height: 1.75;
+    }
+
+    /* ── Garden collage ──────────────────────────────── */
+    .collage-heading {
+      color: #4A7824;
+      font-size: 1.4rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .garden-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .garden-collage img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* Make the 4th and 5th images span wider to fill a row of 2 */
+    .garden-collage img:nth-child(4),
+    .garden-collage img:nth-child(5) {
+      grid-column: span 1;
+    }
+
+    .collage-bottom-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .collage-bottom-row img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      background-color: #f7faf4;
+      border-top: 3px solid #4A7824;
+      padding: 1.4rem 2rem;
+      text-align: center;
+      color: #666;
+      font-size: 0.88rem;
+      font-family: Arial, sans-serif;
+      margin-top: 2rem;
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 680px) {
+      .about-section {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1.75rem;
+      }
+
+      .about-photo-wrap {
+        width: 200px;
+      }
+
+      .about-photo {
+        width: 200px;
+        height: 200px;
+      }
+
+      .garden-collage {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      main {
+        padding: 2rem 1rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Rare Heirloom Tomatoes for Preorder</h1>
+  <p>Reserve your seedlings of the world's most extraordinary heirloom tomatoes, lovingly grown and ready for your garden.</p>
+</header>
+
+<nav>
+  <a href="index.html#varieties">Varieties</a>
+  <a href="index.html#preorder">Preorder</a>
+  <a href="about.html" class="active">About</a>
+</nav>
+
+<main>
+  <h2 class="section-heading">About</h2>
+
+  <div class="about-section">
+    <div class="about-photo-wrap">
+      <img class="about-photo" src="pictures/me.jpeg" alt="Em Wikner in her garden">
+    </div>
+    <div class="about-text">
+      <p>Rare Heirloom Tomatoes is the passion project of Em Wikner, an engineer who prefers to be outside in the garden instead of inside at a desk. You can find her tinkering with her plants in her Homewood, Illinois garden as often as possible. She is a lover of the indescribably rich, nutrient dense, delicious tomatoes that can't be found at the grocery store, and wants to spread that love to as many folks as possible. All tomato plants reared in her care are grown with all organic methods with no herbicides or pesticides.</p>
+    </div>
+  </div>
+
+  <h3 class="collage-heading">The Garden</h3>
+
+  <div class="garden-collage">
+    <img src="pictures/garden1.jpeg" alt="Garden photo 1">
+    <img src="pictures/garden2.jpg" alt="Garden photo 2">
+    <img src="pictures/garden3.jpeg" alt="Garden photo 3">
+  </div>
+  <div class="collage-bottom-row">
+    <img src="pictures/garden4.jpg" alt="Garden photo 4">
+    <img src="pictures/garden5.jpeg" alt="Garden photo 5">
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; {{ 'now' | date: "%Y" }} Rare Heirloom Tomatoes &mdash; Seedlings grown with care for your garden.</p>
+</footer>
+
+</body>
+</html>

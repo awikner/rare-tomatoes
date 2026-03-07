@@ -71,6 +71,36 @@
       text-decoration: underline;
     }
 
+    /* ── Filter bar ──────────────────────────────────── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      padding: 1.25rem 2rem 0;
+    }
+
+    .filter-btn {
+      padding: 0.35rem 1rem;
+      border: 1px solid #4A7824;
+      border-radius: 20px;
+      background: transparent;
+      color: #4A7824;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .filter-btn:hover {
+      background-color: #e8f3de;
+    }
+
+    .filter-btn.active {
+      background-color: #4A7824;
+      color: #ffffff;
+    }
+
     /* ── Main layout ─────────────────────────────────── */
     main {
       max-width: 1440px;
@@ -312,6 +342,7 @@
 <nav>
   <a href="#varieties">Varieties</a>
   <a href="#preorder">Preorder</a>
+  <a href="about.html">About</a>
 </nav>
 
 <main>
@@ -319,9 +350,17 @@
   <!-- ── Variety listing ─────────────────────────── -->
   <h2 class="section-heading" id="varieties">Available Varieties</h2>
 
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="cherry">Cherry</button>
+    <button class="filter-btn" data-filter="beefsteak">Beefsteak</button>
+    <button class="filter-btn" data-filter="paste">Paste</button>
+    <button class="filter-btn" data-filter="apartment">For Apartment Balconies</button>
+  </div>
+
   <div class="tomato-grid">
     {% for tomato in site.data.tomatoes %}{% if tomato.in_stock %}
-    <div class="tomato-card">
+    <div class="tomato-card" data-categories="{{ tomato.categories | join: ' ' }}">
       <div class="panel-img-wrapper">
         <img class="panel-img"
              src="{{ tomato.panel }}"
@@ -524,6 +563,26 @@
     if (!e.target.closest('.preorder-action')) closeAllPopups(null);
   });
 
+}());
+
+/* ── Category filter ──────────────────────────── */
+(function () {
+  var buttons = document.querySelectorAll('.filter-btn');
+  var cards   = document.querySelectorAll('.tomato-card');
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = this.dataset.filter;
+
+      buttons.forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      cards.forEach(function (card) {
+        var cats = card.dataset.categories ? card.dataset.categories.split(' ') : [];
+        card.style.display = (filter === 'all' || cats.indexOf(filter) !== -1) ? '' : 'none';
+      });
+    });
+  });
 }());
 </script>
 
