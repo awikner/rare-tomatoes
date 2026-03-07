@@ -151,7 +151,6 @@
       border-radius: 10px 10px 0 0;
       overflow: hidden;
       flex-shrink: 0;
-      position: relative;
     }
 
     /* ── Sold-out state ──────────────────────────────── */
@@ -159,23 +158,31 @@
       filter: grayscale(80%) opacity(0.65);
     }
 
-    /* Full-diagonal ribbon, bottom-left → top-right */
-    .tomato-card.sold-out .panel-img-wrapper::after {
+    /* Banner above the image — ::before becomes a flex item with order:-1 */
+    .tomato-card.sold-out::before {
       content: 'Sold Out';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 160%;
-      padding: 5% 0;
-      transform: translate(-50%, -50%) rotate(-45deg);
+      display: block;
+      order: -1;
       background-color: #4A7824;
       color: #ffffff;
       text-align: center;
       font-family: Arial, sans-serif;
-      font-size: clamp(1.2rem, 3.5vw, 2rem);
+      font-size: 1rem;
       font-weight: bold;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      padding: 0.45rem 0;
+      border-radius: 9px 9px 0 0;
+    }
+
+    /* Square off image top corners — banner covers them */
+    .tomato-card.sold-out .panel-img-wrapper {
+      border-radius: 0;
+    }
+
+    /* Hide preorder button for sold-out items */
+    .tomato-card.sold-out .preorder-btn {
+      display: none;
     }
 
     .panel-img {
