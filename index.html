@@ -320,7 +320,7 @@
   <h2 class="section-heading" id="varieties">Available Varieties</h2>
 
   <div class="tomato-grid">
-    {% for tomato in site.data.tomatoes %}
+    {% for tomato in site.data.tomatoes %}{% if tomato.in_stock %}
     <div class="tomato-card">
       <div class="panel-img-wrapper">
         <img class="panel-img"
@@ -358,7 +358,7 @@
         </div>
       </div>
     </div>
-    {% endfor %}
+    {% endif %}{% endfor %}
   </div>
 
   <!-- ── Preorder form ───────────────────────────── -->

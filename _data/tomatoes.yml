@@ -15,6 +15,7 @@
   provider_url: "https://www.johnnyseeds.com/vegetables/tomatoes/specialty-tomatoes/blush-organic-tomato-seed-3517G.html"
   image_url: "https://www.johnnyseeds.com/dw/image/v2/BJGJ_PRD/on/demandware.static/-/Sites-jss-master/default/dwbd4fc392/images/products/vegetables/03517g_01_blush.jpg?sw=800&sh=800"
   image_alt: "Blush tomato — golden yellow with rose-pink blush"
+  in_stock: true
 
 - name: "Sun Gold"
   panel: "panels/panel-02.jpg"
@@ -29,6 +30,7 @@
   provider_url: "https://www.botanicalinterests.com/products/sun-gold-cherry-tomato-seeds"
   image_url: "https://www.botanicalinterests.com/cdn/shop/files/0185i_Tomato-Cherry-Sun-Gold_9l54ro_61aed349-be3a-424e-87bb-d3bbd5042f09.jpg?v=1770281065"
   image_alt: "Sun Gold tomato — bright tangerine orange cherry"
+  in_stock: true
 
 - name: "Black Krim"
   panel: "panels/panel-03.jpg"
@@ -43,6 +45,7 @@
   provider_url: "https://www.tomatofest.com/Black_Krim_Tomato_Seeds_p/tf-0063.htm"
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0063-2.jpg?v-cache=1719591810"
   image_alt: "Black Krim tomato — deep mahogany red-brown beefsteak"
+  in_stock: true
 
 - name: "Black Cherry"
   panel: "panels/panel-04.jpg"
@@ -56,6 +59,7 @@
   provider: "Baker Creek Heirloom Seeds"
   image_url: "https://placehold.co/400x300/4a0000/ffffff?text=Black+Cherry"
   image_alt: "Black Cherry tomato — deep mahogany red-purple cherry"
+  in_stock: true
 
 - name: "San Marzano II"
   panel: "panels/panel-05.jpg"
@@ -70,6 +74,7 @@
   provider_url: "https://www.johnnyseeds.com/vegetables/tomatoes/heirloom-tomatoes/san-marzano-ii-organic-tomato-seed-3405G.html"
   image_url: "https://www.johnnyseeds.com/dw/image/v2/BJGJ_PRD/on/demandware.static/-/Sites-jss-master/default/dw41fb5a76/images/products/vegetables/03405g_01_san_marzano.jpg?sw=800&sh=800"
   image_alt: "San Marzano II tomato — elongated bright red paste tomato"
+  in_stock: true
 
 - name: "Red Pearl Grape"
   panel: "panels/panel-06.jpg"
@@ -84,6 +89,7 @@
   provider_url: "https://fedcoseeds.com/seeds/red-pearl-organic-grape-tomato-4101"
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4101.jpg"
   image_alt: "Red Pearl Grape tomato — bright red grape-shaped"
+  in_stock: true
 
 - name: "Blue Beech Paste"
   panel: "panels/panel-07.jpg"
@@ -98,6 +104,7 @@
   provider_url: "https://fedcoseeds.com/seeds/blue-beech-organic-paste-tomato-4146"
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4146.jpg"
   image_alt: "Blue Beech Paste tomato — red with blue-purple shoulders"
+  in_stock: true
 
 - name: "Dwarf Purple Heart"
   panel: "panels/panel-08.jpg"
@@ -112,6 +119,7 @@
   provider_url: "https://www.tomatofest.com/Dwarf_Purple_Heart_Organic_Tomato_Seeds_p/tf-0153d10.htm"
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0153D10-2.jpg?v-cache=1719591810"
   image_alt: "Dwarf Purple Heart tomato — heart-shaped deep purple-black"
+  in_stock: true
 
 - name: "Cipolla's Pride Paste"
   panel: "panels/panel-09.jpg"
@@ -126,6 +134,7 @@
   provider_url: "https://www.johnnyseeds.com/vegetables/tomatoes/heirloom-tomatoes/cipollas-pride-organic-tomato-seed-4180G.html"
   image_url: "https://www.johnnyseeds.com/dw/image/v2/BJGJ_PRD/on/demandware.static/-/Sites-jss-master/default/dw5ee0262a/images/products/vegetables/04180g_01_cipollaspride.jpg?sw=800&sh=800"
   image_alt: "Cipolla's Pride Paste tomato — deep red Italian paste"
+  in_stock: true
 
 - name: "Dwarf Hannah's Prize"
   panel: "panels/panel-10.jpg"
@@ -140,6 +149,7 @@
   provider_url: "https://www.tomatofest.com/Dwarf_Hannah_s_Prize_Organic_Tomato_Seeds_p/tf-0153d6d.htm"
   image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0153D6D-2.jpg?v-cache=1719591810"
   image_alt: "Dwarf Hannah's Prize tomato — red oblate with light striping"
+  in_stock: true
 
 - name: "Speckled Roman Paste"
   panel: "panels/panel-11.jpg"
@@ -154,6 +164,7 @@
   provider_url: "https://fedcoseeds.com/seeds/speckled-roman-organic-paste-tomato-4138"
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4138.jpg"
   image_alt: "Speckled Roman Paste tomato — scarlet with golden striations"
+  in_stock: true
 
 - name: "Dwarf Stony Brook Heart"
   panel: "panels/panel-12.jpg"
@@ -168,6 +179,7 @@
   provider_url: "https://victoryseeds.com/products/dwarf-stony-brook-heart-tomato"
   image_url: "https://victoryseeds.com/pics/2025-04-01/dave/53e2fc.webp"
   image_alt: "Dwarf Stony Brook Heart tomato — scarlet heart-shaped with golden stripes"
+  in_stock: true
 
 - name: "Dwarf Mandurang Moon"
   panel: "panels/panel-13.jpg"
@@ -182,6 +194,7 @@
   provider_url: "https://hudsonvalleyseed.com/products/mandurang-moon-tomato"
   image_url: "https://hudsonvalleyseed.com/cdn/shop/products/Mandurang-Moon-Tomato-vendor-unknown-1630681597_grande.jpg?v=1735579440"
   image_alt: "Dwarf Mandurang Moon tomato — creamy ivory oval cherry"
+  in_stock: true
 
 - name: "Wiesnicht's Ukrainian"
   panel: "panels/panel-14.jpg"
@@ -196,6 +209,7 @@
   provider_url: "https://fedcoseeds.com/seeds/weisnichts-ukrainian-organic-slicing-tomato-4082"
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4082.jpg"
   image_alt: "Weisnicht's Ukrainian tomato — large pink beefsteak"
+  in_stock: true
 
 - name: "Pantano Romanesco"
   panel: "panels/panel-15.jpg"
@@ -210,6 +224,7 @@
   provider_url: "https://hudsonvalleyseed.com/products/pantano-romanesco-tomato"
   image_url: "https://hudsonvalleyseed.com/cdn/shop/products/Pantano-Romanesco-Tomato-vendor-unknown-1630677547_grande.jpg?v=1735579814"
   image_alt: "Pantano Romanesco tomato — large deeply ribbed red Italian heirloom"
+  in_stock: true
 
 - name: "Cherokee Purple"
   panel: "panels/panel-16.jpg"
@@ -224,6 +239,7 @@
   provider_url: "https://fedcoseeds.com/seeds/cherokee-purple-organic-slicing-tomato-4059"
   image_url: "https://res.cloudinary.com/fedcloud/image/upload/w_600,h_600,f_auto,q_auto,c_limit/fedcoseeds.com/seeds/seeds_images/4059.jpg"
   image_alt: "Cherokee Purple tomato — dusky brownish-purple large heirloom"
+  in_stock: true
 
 - name: "Midnight Roma"
   panel: "panels/panel-17.jpg"
@@ -238,3 +254,4 @@
   provider_url: "https://www.row7seeds.com/products/midnight-roma-tomato-seeds"
   image_url: "https://www.row7seeds.com/cdn/shop/files/tomatocrop_5aee653f-4931-4ec4-9e53-b465e1caa5ce.jpg?v=1694434529"
   image_alt: "Midnight Roma tomato — deep purple-black paste tomato"
+  in_stock: true
