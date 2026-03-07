@@ -610,10 +610,6 @@
 
 /* ── Google Sheet stock sync ─────────────────── */
 (function () {
-  // Publish your Google Sheet: File → Share → Publish to web → CSV
-  // Paste the published CSV URL below.
-  // Expected columns: a "Name" column (tomato name) and an "InStock" column
-  // (TRUE/FALSE or Yes/No). If a name is not found, the card defaults to in-stock.
   var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT9J2PR4bwdt1AtFvMXkmot7EhpLZ9-UHM8CXsjFBeVp_cyPYXWXIPCW_rUTPKFyUnHKXUzg38bia-f/pub?output=csv';
 
   if (!SHEET_CSV_URL || SHEET_CSV_URL.indexOf('YOUR_') === 0) return;
@@ -644,37 +640,48 @@
     return rows;
   }
 
-  fetch(SHEET_CSV_URL)
-    .then(function (r) { return r.text(); })
-    .then(function (text) {
-      var rows = parseCSV(text);
-      if (rows.length < 2) return;
+  function syncStock() {
+    // Append timestamp to bypass any HTTP cache on the CSV response
+    fetch(SHEET_CSV_URL + '&_t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        var rows = parseCSV(text);
+        if (rows.length < 2) return;
 
-      // Column 0 = tomato names (no header in sheet)
-      // Column 1 = TRUE/FALSE stock values (labeled "Name" in sheet)
-      var nameIdx  = 0;
-      var stockIdx = 1;
-      if (!rows[1] || rows[1].length < 2) return;
+        // Column 0 = tomato names (no header in sheet)
+        // Column 1 = TRUE/FALSE stock values (labeled "Name" in sheet)
+        var nameIdx  = 0;
+        var stockIdx = 1;
+        if (!rows[1] || rows[1].length < 2) return;
 
-      /* Build lookup: normalised name → boolean */
-      var stockMap = {};
-      for (var i = 1; i < rows.length; i++) {
-        var row  = rows[i];
-        var name = (row[nameIdx] || '').trim();
-        var val  = (row[stockIdx] || '').trim().toLowerCase();
-        if (name) stockMap[name.toLowerCase()] = (val === 'true' || val === 'yes' || val === '1');
-      }
+        /* Build lookup: normalised name → boolean */
+        var stockMap = {};
+        for (var i = 1; i < rows.length; i++) {
+          var row  = rows[i];
+          var name = (row[nameIdx] || '').trim();
+          var val  = (row[stockIdx] || '').trim().toLowerCase();
+          if (name) stockMap[name.toLowerCase()] = (val === 'true' || val === 'yes' || val === '1');
+        }
 
-      /* Apply to every card; default to in-stock when name not in sheet */
-      document.querySelectorAll('.tomato-card[data-name]').forEach(function (card) {
-        var name = card.dataset.name.toLowerCase();
-        var inStock = Object.prototype.hasOwnProperty.call(stockMap, name)
-          ? stockMap[name]
-          : true;
-        card.classList.toggle('sold-out', !inStock);
-      });
-    })
-    .catch(function () { /* silently fall back to YAML state */ });
+        /* Apply to every card; default to in-stock when name not in sheet */
+        document.querySelectorAll('.tomato-card[data-name]').forEach(function (card) {
+          var name = card.dataset.name.toLowerCase();
+          var inStock = Object.prototype.hasOwnProperty.call(stockMap, name)
+            ? stockMap[name]
+            : true;
+          card.classList.toggle('sold-out', !inStock);
+        });
+      })
+      .catch(function () { /* silently fall back to YAML state */ });
+  }
+
+  // Run on initial load
+  syncStock();
+
+  // Re-run when browser restores the page from bfcache (back/forward navigation)
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) syncStock();
+  });
 }());
 
 /* ── Category filter ──────────────────────────── */
