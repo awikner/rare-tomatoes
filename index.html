@@ -77,7 +77,13 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       justify-content: center;
-      padding: 1.25rem 2rem 0;
+      padding: 0.85rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e8f3de;
+      margin-bottom: 1.75rem;
     }
 
     .filter-btn {
@@ -348,57 +354,59 @@
 <main>
 
   <!-- ── Variety listing ─────────────────────────── -->
-  <h2 class="section-heading" id="varieties">Available Varieties</h2>
+  <section class="varieties-section">
+    <h2 class="section-heading" id="varieties">Available Varieties</h2>
 
-  <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="cherry">Cherry</button>
-    <button class="filter-btn" data-filter="beefsteak">Beefsteak</button>
-    <button class="filter-btn" data-filter="paste">Paste</button>
-    <button class="filter-btn" data-filter="apartment">For Apartment Balconies</button>
-  </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cherry">Cherry</button>
+      <button class="filter-btn" data-filter="beefsteak">Beefsteak</button>
+      <button class="filter-btn" data-filter="paste">Paste</button>
+      <button class="filter-btn" data-filter="apartment">For Apartment Balconies</button>
+    </div>
 
-  <div class="tomato-grid">
-    {% for tomato in site.data.tomatoes %}{% if tomato.in_stock %}
-    <div class="tomato-card" data-categories="{{ tomato.categories | join: ' ' }}">
-      <div class="panel-img-wrapper">
-        <img class="panel-img"
-             src="{{ tomato.panel }}"
-             alt="{{ tomato.name }}"
-             loading="lazy">
-      </div>
-      <div class="card-footer">
-        {% if tomato.provider_url %}
-        <a href="{{ tomato.provider_url }}"
-           class="provider-link"
-           target="_blank"
-           rel="noopener noreferrer">
-          View at {{ tomato.provider }} &rarr;
-        </a>
-        {% else %}
-        <span></span>
-        {% endif %}
+    <div class="tomato-grid">
+      {% for tomato in site.data.tomatoes %}{% if tomato.in_stock %}
+      <div class="tomato-card" data-categories="{{ tomato.categories | join: ' ' }}">
+        <div class="panel-img-wrapper">
+          <img class="panel-img"
+               src="{{ tomato.panel }}"
+               alt="{{ tomato.name }}"
+               loading="lazy">
+        </div>
+        <div class="card-footer">
+          {% if tomato.provider_url %}
+          <a href="{{ tomato.provider_url }}"
+             class="provider-link"
+             target="_blank"
+             rel="noopener noreferrer">
+            View at {{ tomato.provider }} &rarr;
+          </a>
+          {% else %}
+          <span></span>
+          {% endif %}
 
-        <div class="preorder-action" data-name="{{ tomato.name | escape }}">
-          <!-- Popup anchored above the Preorder button -->
-          <div class="preorder-popup" hidden>
-            <div class="popup-input-panel">
-              <label>How many would you like to preorder?</label>
-              <div class="qty-row">
-                <input type="number" class="qty-input" min="0" step="1" placeholder="0">
-                <button type="button" class="qty-confirm">OK</button>
+          <div class="preorder-action" data-name="{{ tomato.name | escape }}">
+            <!-- Popup anchored above the Preorder button -->
+            <div class="preorder-popup" hidden>
+              <div class="popup-input-panel">
+                <label>How many would you like to preorder?</label>
+                <div class="qty-row">
+                  <input type="number" class="qty-input" min="0" step="1" placeholder="0">
+                  <button type="button" class="qty-confirm">OK</button>
+                </div>
+              </div>
+              <div class="popup-thanks" hidden>
+                Thank you! Remember to submit your preorder at the bottom of the page when you are finished.
               </div>
             </div>
-            <div class="popup-thanks" hidden>
-              Thank you! Remember to submit your preorder at the bottom of the page when you are finished.
-            </div>
+            <button type="button" class="provider-link preorder-btn">Preorder &darr;</button>
           </div>
-          <button type="button" class="provider-link preorder-btn">Preorder &darr;</button>
         </div>
       </div>
+      {% endif %}{% endfor %}
     </div>
-    {% endif %}{% endfor %}
-  </div>
+  </section>
 
   <!-- ── Preorder form ───────────────────────────── -->
   <section class="preorder-section" id="preorder">

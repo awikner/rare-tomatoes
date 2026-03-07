@@ -102,12 +102,12 @@
     /* Circular photo */
     .about-photo-wrap {
       flex-shrink: 0;
-      width: 260px;
+      width: 360px;
     }
 
     .about-photo {
-      width: 260px;
-      height: 260px;
+      width: 360px;
+      height: 360px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center 15%;
@@ -139,16 +139,9 @@
 
     .garden-collage img {
       width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
+      height: auto;
       border-radius: 8px;
       display: block;
-    }
-
-    /* Make the 4th and 5th images span wider to fill a row of 2 */
-    .garden-collage img:nth-child(4),
-    .garden-collage img:nth-child(5) {
-      grid-column: span 1;
     }
 
     .collage-bottom-row {
@@ -160,8 +153,7 @@
 
     .collage-bottom-row img {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      height: auto;
       border-radius: 8px;
       display: block;
     }
@@ -187,16 +179,17 @@
       }
 
       .about-photo-wrap {
-        width: 200px;
+        width: 260px;
       }
 
       .about-photo {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
       }
 
-      .garden-collage {
-        grid-template-columns: repeat(2, 1fr);
+      .garden-collage,
+      .collage-bottom-row {
+        grid-template-columns: 1fr;
       }
 
       main {
@@ -209,7 +202,7 @@
 
 <header>
   <h1>Rare Heirloom Tomatoes for Preorder</h1>
-  <p>Reserve your seedlings of the world's most extraordinary heirloom tomatoes, lovingly grown and ready for your garden.</p>
+  <p>Reserve your order now for your very own heirloom tomato plants! <strong>13 new varieties</strong> are being offered this year, check them out below! <strong>Pick up/Delivery around May 10th.</strong> $5 per plant, some discounts possible for large orders. Our availability is subject to change but is kept up to date as much as possible.</p>
 </header>
 
 <nav>
@@ -223,7 +216,7 @@
 
   <div class="about-section">
     <div class="about-photo-wrap">
-      <img class="about-photo" src="pictures/me.jpeg" alt="Em Wikner in her garden">
+      <img class="about-photo" src="pictures/me.jpeg" alt="Me with my plants">
     </div>
     <div class="about-text">
       <p>Rare Heirloom Tomatoes is the passion project of Em Wikner, an engineer who prefers to be outside in the garden instead of inside at a desk. You can find her tinkering with her plants in her Homewood, Illinois garden as often as possible. She is a lover of the indescribably rich, nutrient dense, delicious tomatoes that can't be found at the grocery store, and wants to spread that love to as many folks as possible. All tomato plants reared in her care are grown with all organic methods with no herbicides or pesticides.</p>
