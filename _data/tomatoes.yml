@@ -241,6 +241,21 @@
   image_alt: "Cherokee Purple tomato — dusky brownish-purple large heirloom"
   in_stock: true
 
+- name: "Mortgage Lifter"
+  panel: "panels/panel-18.jpg"
+  type: "Slicer / Beefsteak"
+  plant_size: "Indeterminate; vigorous plants 5–7 ft tall; very productive and disease-resistant, bears until frost"
+  fruit_size: "1–3+ lbs; very large, slightly flattened"
+  color: "Pink-red"
+  flavor: "Meaty and very flavorful with few seeds; classic old-fashioned tomato taste"
+  uses: "Slicing, fresh eating, sandwiches, salads"
+  description: "Mortgage Lifter 'Radiator Charlie's' is one of the most legendary heirloom tomatoes in existence, developed by M.C. Byles in the 1930s through six years of patient cross-breeding without formal training. Byles—nicknamed 'Radiator Charlie' after his repair shop—sold seedlings for $1 each during the 1940s and famously paid off his $6,000 mortgage in six years, with gardeners traveling up to 200 miles to buy them. The enormous, slightly flattened pink-red fruits average 2½ lbs and can reach 4 lbs. Plants are highly productive, disease-resistant, and bear continuously until frost."
+  provider: "Tomatofest"
+  provider_url: "https://www.tomatofest.com/Mortgage_Lifter_Radiator_Charlie_s_p/tf-0324.htm"
+  image_url: "https://cdn4.volusion.store/ph9xz-o9ecs/v/vspfiles/photos/TF-0324-2.jpg?v-cache=1719591810"
+  image_alt: "Mortgage Lifter Radiator Charlie's tomato — very large pink-red beefsteak"
+  in_stock: true
+
 - name: "Midnight Roma"
   panel: "panels/panel-17.jpg"
   type: "Paste"
