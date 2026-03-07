@@ -65,7 +65,7 @@
   in_stock: true
   categories: [cherry]
 
-- name: "San Marzano II"
+- name: "San Marzano II OG"
   panel: "pictures/panel-05.jpg"
   type: "Paste"
   plant_size: "Indeterminate; tall plants 5–7 ft"
@@ -129,7 +129,7 @@
   in_stock: true
   categories: [beefsteak, small, paste]
 
-- name: "Cipolla's Pride Paste"
+- name: "Cipolla's Pride"
   panel: "pictures/panel-09.jpg"
   type: "Paste"
   plant_size: "Indeterminate; plants 5–7 ft tall"
@@ -257,7 +257,7 @@
   in_stock: true
   categories: [beefsteak]
 
-- name: "Mortgage Lifter"
+- name: "Mortgage Lifter, Radiator Charlie's"
   panel: "pictures/panel-18.jpg"
   type: "Slicer / Beefsteak"
   plant_size: "Indeterminate; vigorous plants 5–7 ft tall; very productive and disease-resistant, bears until frost"

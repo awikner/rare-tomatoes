@@ -7,4 +7,4 @@ _site/
 Gemfile.lock
 CLAUDE.md
 _data/IMG_0352.PNG.jpg
-_data/Tomato Guide.pdf
+*.pdf

@@ -612,9 +612,9 @@
 (function () {
   // Publish your Google Sheet: File → Share → Publish to web → CSV
   // Paste the published CSV URL below.
-  // Expected columns: a "Name" column (tomato name) and an "In Stock" column
+  // Expected columns: a "Name" column (tomato name) and an "InStock" column
   // (TRUE/FALSE or Yes/No). If a name is not found, the card defaults to in-stock.
-  var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT9J2PR4bwdt1AtFvMXkmot7EhpLZ9-UHM8CXsjFBeVp_cyPYXWXIPCW_rUTPKFyUnHKXUzg38bia-f/pub?gid=1635827378&single=true&output=csv';
+  var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT9J2PR4bwdt1AtFvMXkmot7EhpLZ9-UHM8CXsjFBeVp_cyPYXWXIPCW_rUTPKFyUnHKXUzg38bia-f/pub?output=csv';
 
   if (!SHEET_CSV_URL || SHEET_CSV_URL.indexOf('YOUR_') === 0) return;
 
@@ -650,10 +650,11 @@
       var rows = parseCSV(text);
       if (rows.length < 2) return;
 
-      var header = rows[0].map(function (h) { return h.trim().toLowerCase(); });
-      var nameIdx  = header.indexOf('name');
-      var stockIdx = header.indexOf('in stock');
-      if (nameIdx === -1 || stockIdx === -1) return;
+      // Column 0 = tomato names (no header in sheet)
+      // Column 1 = TRUE/FALSE stock values (labeled "Name" in sheet)
+      var nameIdx  = 0;
+      var stockIdx = 1;
+      if (!rows[1] || rows[1].length < 2) return;
 
       /* Build lookup: normalised name → boolean */
       var stockMap = {};
