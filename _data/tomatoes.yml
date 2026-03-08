@@ -35,7 +35,7 @@
   categories: [cherry]
 
 - name: "Black Krim"
-  panel: "pictures/panel-03.jpg"
+  panel: "pictures/panel-03.jpg" # Test comment
   type: "Beefsteak"
   plant_size: "Indeterminate; large plants 5–7 ft tall"
   fruit_size: "10–16 oz; large, slightly flattened globe"
