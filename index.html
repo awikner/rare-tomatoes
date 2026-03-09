@@ -486,17 +486,28 @@
   // Accumulated order: { "Blush": 3, "Sun Gold": 5, ... }
   var orders = {};
 
+  // Tomato names in YAML order — used to sort the order summary
+  var TOMATO_ORDER = [{% for tomato in site.data.tomatoes %}"{{ tomato.name | escape }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+
   /* Build the formatted order message from current state */
   function buildMessage() {
-    var lines = Object.keys(orders)
-      .filter(function (k) { return orders[k] > 0; })
-      .map(function (k) {
-        var q = orders[k];
-        return '- ' + k + ': ' + q + ' seedling' + (q !== 1 ? 's' : '');
-      });
-    if (!lines.length) return '';
+    var keys = Object.keys(orders).filter(function (k) { return orders[k] > 0; });
+    if (!keys.length) return '';
+
+    // Sort by position in YAML
+    keys.sort(function (a, b) {
+      return TOMATO_ORDER.indexOf(a) - TOMATO_ORDER.indexOf(b);
+    });
+
+    var total = keys.reduce(function (sum, k) { return sum + orders[k]; }, 0);
+
+    var lines = keys.map(function (k) {
+      var q = orders[k];
+      return '- ' + k + ': ' + q + ' seedling' + (q !== 1 ? 's' : '');
+    });
+
     return [
-      'Hello! I am interested in preordering the following rare tomato seedlings:',
+      'Hello! I am interested in preordering ' + total + ' rare tomato seedlings:',
     ].concat(lines).concat(['Thank you!']).join('\n');
   }
 
